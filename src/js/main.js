@@ -1,0 +1,1 @@
+new Tooltip('[data-tooltip]');
