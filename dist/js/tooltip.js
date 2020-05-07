@@ -12,6 +12,7 @@ var Tooltip = /*#__PURE__*/function () {
   //setnup a couple of variables that will be used in different locations
   //$ means it will be a dom element and plural means its an array
   // will hold the single tooltip that we create
+  // the constructor is the starting point for our class anytime its loaded via Tooltip()
   function Tooltip(selector) {
     var _this = this;
 
@@ -22,6 +23,7 @@ var Tooltip = /*#__PURE__*/function () {
     _defineProperty(this, "tooltipDiv", null);
 
     _defineProperty(this, "mouseover", function (evt) {
+      // "this" maps to the tooltip instance
       console.log('mousing over', evt.target, evt);
       var tooltipText = evt.target.getAttribute('data-tooltip');
       _this.tooltipDiv.innerHTML = tooltipText;
@@ -33,7 +35,7 @@ var Tooltip = /*#__PURE__*/function () {
       _this.setupTooltip($tooltip);
     });
     this.tooltipDiv = document.createElement('div');
-    this.tooltipDiv.innerHTML = '';
+    this.tooltipDiv.innerHTML = 'TEST';
     this.tooltipDiv.classList.add('show-tooltip');
     document.body.appendChild(this.tooltipDiv);
   }
@@ -49,12 +51,11 @@ var Tooltip = /*#__PURE__*/function () {
         return;
       }
 
-      console.log('setting up tooltip for', tooltipText);
-      $tooltip.addEventListener('mouseover', this.mouseover); // this.tooltipDiv = document.createElement('div');
-      // this.tooltipDiv.innerHTML = '';
-      // this.tooltipDiv.classList.add('show-tooltip');
-      // document.body.appendChild(this.tooltipDiv);
-    }
+      console.log('setting up tooltip for', tooltipText); //add a hover state with addEventListener
+
+      $tooltip.addEventListener('mouseover', this.mouseover);
+    } // mouseover(evt){}		//"this" maps to the evt.target
+
   }]);
 
   return Tooltip;
