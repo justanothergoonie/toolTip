@@ -31,6 +31,7 @@ class Tooltip {
 
 		//add a hover state with addEventListener
 		$tooltip.addEventListener('mouseover', this.mouseover);
+		$tooltip.addEventListener('mouseout', this.mouseout);
 	}
 	// mouseover(evt){}		//"this" maps to the evt.target
 
@@ -40,5 +41,15 @@ class Tooltip {
 
 		var tooltipText = evt.target.getAttribute('data-tooltip');
 		this.tooltipDiv.innerHTML = tooltipText;
+
+		this.tooltipDiv.style.color = 'pink';
+		this.tooltipDiv.style.opacity = '1';
+		//slide up from bottom
 	};
+
+	mouseout = (evt) => {
+		console.log('mousing out');
+		this.tooltipDiv.style.opacity = '0';
+	};
+	//slide down from bottom
 }

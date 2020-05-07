@@ -1,5 +1,10 @@
-@import 'reset';
+@import "reset";
 
 .show-tooltip {
 	opacity: 0;
+}
+
+.googlelink {
+	font-weight: bold;
+	color: red;
 }

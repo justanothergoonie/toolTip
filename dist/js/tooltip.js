@@ -27,6 +27,13 @@ var Tooltip = /*#__PURE__*/function () {
       console.log('mousing over', evt.target, evt);
       var tooltipText = evt.target.getAttribute('data-tooltip');
       _this.tooltipDiv.innerHTML = tooltipText;
+      _this.tooltipDiv.style.color = 'pink';
+      _this.tooltipDiv.style.opacity = '1'; //slide up from bottom
+    });
+
+    _defineProperty(this, "mouseout", function (evt) {
+      console.log('mousing out');
+      _this.tooltipDiv.style.opacity = '0';
     });
 
     console.log('creating new tooltip', selector);
@@ -54,7 +61,9 @@ var Tooltip = /*#__PURE__*/function () {
       console.log('setting up tooltip for', tooltipText); //add a hover state with addEventListener
 
       $tooltip.addEventListener('mouseover', this.mouseover);
+      $tooltip.addEventListener('mouseout', this.mouseout);
     } // mouseover(evt){}		//"this" maps to the evt.target
+    //slide down from bottom
 
   }]);
 
