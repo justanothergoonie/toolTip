@@ -9,6 +9,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var Tooltip = /*#__PURE__*/function () {
+  //setnup a couple of variables that will be used in different locations
+  //$ means it will be a dom element and plural means its an array
+  // will hold the single tooltip that we create
   function Tooltip(selector) {
     var _this = this;
 

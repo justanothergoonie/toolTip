@@ -1,6 +1,7 @@
 class Tooltip {
-	$tooltips = null;
-	tooltipDiv = null;
+	//setnup a couple of variables that will be used in different locations
+	$tooltips = null; //$ means it will be a dom element and plural means its an array
+	tooltipDiv = null; // will hold the single tooltip that we create
 
 	constructor(selector) {
 		console.log('creating new tooltip', selector);
